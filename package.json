@@ -1,7 +1,7 @@
 {
-  "name": "weixin-pay",
+  "name": "Weixin-Payment",
   "version": "0.0.1",
-  "description": "wechat pay of nodejs api",
+  "description": "Micro channel payment for node version",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
