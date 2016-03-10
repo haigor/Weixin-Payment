@@ -45,6 +45,8 @@ module.exports = {
         options.nonce_str = tools.getNonceStr();
 
         options.sign = tools.getSign(options);
+        //转为xml字符串
+        _xml = tools.beanToXml(options);
 
         return info;
     }
