@@ -1,0 +1,24 @@
+{
+  "name": "weixin-payment",
+  "version": "0.0.7",
+  "description": "Micro channel payment for node version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ss"
+  },
+  "keywords": [
+    "weixin",
+    "pay"
+  ],
+  "author": "Peter.D.Wang",
+  "license": "ISC",
+  "dependencies": {
+        "crypto": "0.0.3",
+        "xml2js": "~0.4.16",
+        "sync-request":"3.0.0"
+    }
+}
