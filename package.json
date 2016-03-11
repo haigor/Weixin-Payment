@@ -1,6 +1,6 @@
 {
-  "name": "Weixin-Payment",
-  "version": "0.0.1",
+  "name": "weixin-payment",
+  "version": "0.0.7",
   "description": "Micro channel payment for node version",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,10 @@
     "pay"
   ],
   "author": "Peter.D.Wang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+        "crypto": "0.0.3",
+        "xml2js": "~0.4.16",
+        "sync-request":"3.0.0"
+    }
 }

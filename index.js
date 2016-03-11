@@ -8,28 +8,34 @@ var app = {
     pr: function(json, res) {
         if (json.return_code === 'SUCCESS' && json.return_code === 'SUCCESS') {
             res.json({
-                "appId"：
-                json.appid, //公众号名称，由商户传入     
-                    "timeStamp"：
-                new Date().getTime(), //时间戳，自1970年以来的秒数     
-                    "nonceStr"：
-                tools.getNonceStr(), //随机串     
-                    "package"：
+                "appId":
+                json.appid, //公众号名称，由商户传入
+                    "timeStamp":
+                new Date().getTime(), //时间戳，自1970年以来的秒数
+                    "nonceStr":
+                tools.getNonceStr(), //随机串
+                    "package":
                 "prepay_id=" + json.prepay_id,
-                    "signType"：
-                "MD5", //微信签名方式：     
-                "paySign"：
-                json.sign //微信签名 
+                    "signType":
+                "MD5", //微信签名方式：
+                "paySign":
+                json.sign //微信签名
             });
+        }else{
+            res.json(json);
         }
     },
     qor:function(json,res){
         if (json.return_code === 'SUCCESS' && json.return_code === 'SUCCESS') {
             res.json(json);
+        }else{
+            res.json(json);
         }
     },
     cor:function(json,res){
         if (json.return_code === 'SUCCESS' && json.return_code === 'SUCCESS') {
+            res.json(json);
+        }else{
             res.json(json);
         }
     }
@@ -59,14 +65,14 @@ module.exports = {
             throw ('缺少统一支付接口必填参数trade_type！');
         } else if (!tools.isNotNull(options.appid)) {
             throw ('缺少统一支付接口必填参数appid！');
-        } else if (!tools.isNotNull(options.mchid)) {
-            throw ('缺少统一支付接口必填参数mchid！');
+        } else if (!tools.isNotNull(options.mch_id)) {
+            throw ('缺少统一支付接口必填参数mch_id！');
         } else if (!tools.isNotNull(options.notify_url)) {
             throw ('缺少统一支付接口必填参数notify_url！');
         } else if (!tools.isNotNull(options.spbill_create_ip)) {
             throw ('缺少统一支付接口必填参数spbill_create_ip！');
         } else if (!tools.isNotNull(key)) {
-            throw ('缺少统一支付接口必填参数spbill_create_ip！');
+            throw ('缺少统一支付接口必填参数key！');
         }
 
         //关联参数
@@ -91,7 +97,7 @@ module.exports = {
         _url ='https://api.mch.weixin.qq.com/pay/orderquery',
         _method ='POST',
             _options = {},
-            var _request={};
+            _request={};
         //检测必填参数
         if (!tools.isNotNull(options.appid)) {
             throw ('缺少订单查询接口必填参数appid！');
@@ -114,7 +120,7 @@ module.exports = {
         _url ='https://api.mch.weixin.qq.com/pay/closeorder',
         _method ='POST',
             _options = {},
-            var _request={};
+            _request={};
         //检测必填参数
         if (!tools.isNotNull(options.appid)) {
             throw ('缺少关闭订单接口必填参数appid！');
